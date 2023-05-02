@@ -36,12 +36,12 @@ export const Navbar = ({
             />
           )}
         </div>
-        <p className="text-xl font-bold dark:text-white">{GAME_TITLE}</p>
+        <p className="text-xl font-bold dark:text-white">WORDLE</p>
         <div className="right-icons">
-          <ChartBarIcon
+          {/* <ChartBarIcon
             className="mr-3 h-6 w-6 cursor-pointer dark:stroke-white"
             onClick={() => setIsStatsModalOpen(true)}
-          />
+          /> */}
           <CogIcon
             className="h-6 w-6 cursor-pointer dark:stroke-white"
             onClick={() => setIsSettingsModalOpen(true)}
@@ -49,6 +49,13 @@ export const Navbar = ({
         </div>
       </div>
       <hr></hr>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          paddingTop: 30
+        }}
+      ><img src="./Blogo.png" /></div>
     </div>
   )
 }

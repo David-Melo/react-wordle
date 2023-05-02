@@ -123,7 +123,7 @@ export const getWordOfDay = (index: number) => {
     throw new Error('Invalid index')
   }
 
-  return localeAwareUpperCase(WORDS[index % WORDS.length])
+  return localeAwareUpperCase(WORDS[Math.floor(Math.random() * WORDS.length)])
 }
 
 export const getSolution = (gameDate: Date) => {

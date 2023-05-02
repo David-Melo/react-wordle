@@ -54,13 +54,11 @@ import {
   unicodeLength,
 } from './lib/words'
 
+console.log(solution)
+
 function App() {
   const isLatestGame = getIsLatestGame()
   const gameDate = getGameDate()
-  const prefersDarkMode = window.matchMedia(
-    '(prefers-color-scheme: dark)'
-  ).matches
-
   const { showError: showErrorAlert, showSuccess: showSuccessAlert } =
     useAlert()
   const [currentGuess, setCurrentGuess] = useState('')
@@ -72,13 +70,7 @@ function App() {
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem('theme')
-      ? localStorage.getItem('theme') === 'dark'
-      : prefersDarkMode
-      ? true
-      : false
-  )
+  const [isDarkMode, setIsDarkMode] = useState(false)
   const [isHighContrastMode, setIsHighContrastMode] = useState(
     getStoredIsHighContrastMode()
   )
@@ -100,14 +92,8 @@ function App() {
     }
     return loaded.guesses
   })
-
   const [stats, setStats] = useState(() => loadStats())
-
-  const [isHardMode, setIsHardMode] = useState(
-    localStorage.getItem('gameMode')
-      ? localStorage.getItem('gameMode') === 'hard'
-      : false
-  )
+  const [isHardMode, setIsHardMode] = useState(false)
 
   useEffect(() => {
     // if no game state on load,

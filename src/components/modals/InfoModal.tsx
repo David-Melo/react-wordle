@@ -57,7 +57,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         The letter U is not in the word in any spot.
       </p>
 
-      <p className="mt-6 text-sm italic text-gray-500 dark:text-gray-300">
+      {/* <p className="mt-6 text-sm italic text-gray-500 dark:text-gray-300">
         This is an open source version of the word guessing game we all know and
         love -{' '}
         <a
@@ -66,7 +66,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         >
           check out the code here
         </a>{' '}
-      </p>
+      </p> */}
     </BaseModal>
   )
 }
