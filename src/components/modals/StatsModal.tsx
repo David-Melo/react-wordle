@@ -88,8 +88,8 @@ export const StatsModal = ({
         numberOfGuessesMade={numberOfGuessesMade}
       />
       {(isGameLost || isGameWon) && (
-        <div className="mt-5 columns-2 items-center items-stretch justify-center text-center dark:text-white sm:mt-6">
-          <div className="inline-block w-full text-left">
+        <div className="mt-5 columns-1 items-center items-stretch justify-center text-center dark:text-white sm:mt-6">
+          {/* <div className="inline-block w-full text-left">
             {(!ENABLE_ARCHIVED_GAMES || isLatestGame) && (
               <div>
                 <h5>{NEW_WORD_TEXT}</h5>
@@ -112,36 +112,26 @@ export const StatsModal = ({
                 </div>
               </div>
             )}
-          </div>
+          </div> */}
           <div>
             <button
               type="button"
               className="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-center text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-base"
               onClick={() => {
-                shareStatus(
-                  solution,
-                  guesses,
-                  isGameLost,
-                  isHardMode,
-                  isDarkMode,
-                  isHighContrastMode,
-                  handleShareToClipboard,
-                  handleShareFailure
-                )
+                window.location.reload()
               }}
             >
-              <ShareIcon className="mr-2 h-6 w-6 cursor-pointer dark:stroke-white" />
-              {SHARE_TEXT}
+              NEW GAME
             </button>
           </div>
         </div>
       )}
-      {ENABLE_MIGRATE_STATS && (
+      {/* {ENABLE_MIGRATE_STATS && (
         <div>
           <hr className="mt-4 -mb-4 border-gray-500" />
           <MigrationIntro handleMigrateStatsButton={handleMigrateStatsButton} />
         </div>
-      )}
+      )} */}
     </BaseModal>
   )
 }

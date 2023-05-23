@@ -3,6 +3,7 @@ import {
   ChartBarIcon,
   CogIcon,
   InformationCircleIcon,
+  RefreshIcon
 } from '@heroicons/react/outline'
 
 import { ENABLE_ARCHIVED_GAMES } from '../../constants/settings'
@@ -38,10 +39,10 @@ export const Navbar = ({
         </div>
         <p className="text-xl font-bold dark:text-white">WORDLE</p>
         <div className="right-icons">
-          {/* <ChartBarIcon
+          <RefreshIcon
             className="mr-3 h-6 w-6 cursor-pointer dark:stroke-white"
-            onClick={() => setIsStatsModalOpen(true)}
-          /> */}
+            onClick={() => window.location.reload()}
+          />
           <CogIcon
             className="h-6 w-6 cursor-pointer dark:stroke-white"
             onClick={() => setIsSettingsModalOpen(true)}
